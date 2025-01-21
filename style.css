@@ -1,0 +1,29 @@
+.flipCard {
+    width:240px; height:200px; margin:10px; float:left;
+}
+
+.flipCard > .front {
+    position:absolute;
+    transform:perspective(600px) rotateY(0deg);
+    background:#FC0; width:240px; height:200px; border-radius:7px;
+    backface-visability:hidden;
+    transition:transforn .5s linear 0s;/*Animates linearly in 0.5 seconds*/
+
+}
+
+.flipCard > .back {
+    position:absolute;
+    transform:perspective(600px) rotateY(180deg);
+    background:rgba(0, 200, 255); width:240px; height:200px; border-radius:7px;
+    backface-visability:hidden;
+    transition:transforn .5s linear 0s;/*Animates linearly in 0.5 seconds*/   
+}
+
+.flipCard:active > .front {
+    transform:perspective(600px) rotateY(-180deg);
+}
+
+.flipCard:active > .back {
+    transform:perspective(600px) rotateY(0deg);
+}
+
